@@ -139,6 +139,52 @@ select goal.name, screen_name
 ## Exercise 5
 
 ### Assignment 1
+select name
+    -> from country 
+    -> where iso_country in(
+    -> select iso_country 
+    -> from airport 
+    -> where name like "Satsuma%");
 
+![screenshot](Ex5-Assignment1.png)
+
+### Assignment 2
+select name
+    -> from airport
+    -> where iso_country in(
+    -> select iso_country from country
+    -> where name = "Monaco");
+
+![screenshot](Ex5-Assignment2.png)
+
+### Assignment 3
+select screen_name 
+    -> from game
+    -> where id in(
+    -> select game_id from goal_reached
+    -> where goal_id in(
+    -> select id from goal
+    -> where name = "CLOUDS")
+    -> );
+
+![screenshot](Ex5-Assignment3.png)
+
+### Assignment 4
+select name
+    -> from country
+    -> where iso_country not in(
+    -> select iso_country from airport);
+
+![screenshot](Ex5-Assignment4.png)
+
+### Assignment 5
+select name from goal
+    -> where id not in(
+    -> select goal_id from goal_reached
+    -> where game_id in(
+    -> select id from game
+    -> where screen_name = "Heini"));
+
+![screenshot](Ex5-Assignment5.png)
 
 
