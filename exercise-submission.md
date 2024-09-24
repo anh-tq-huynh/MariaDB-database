@@ -187,4 +187,87 @@ select name from goal
 
 ![screenshot](Ex5-Assignment5.png)
 
+# Week 5
 
+## Exercise 6
+
+### Assignment 1
+select max(elevation_ft) as "max(elevation_ft)" from airport;
+
+![screenshot](Ex6-Assignment1.png)
+
+### Assignment 2
+select continent, count(*)
+    -> from country
+    -> group by continent;
+![screenshot](Ex6-Assignment2.png)
+
+### Assignment 3
+select screen_name, count(*)
+    -> from game
+    -> inner join goal_reached on goal_reached.game_id = game.id
+    -> group by game.id;
+
+![screenshot](Ex6-Assignment3.png)
+
+### Assignment 4
+select screen_name
+    -> from game
+    -> where co2_consumed in(
+    -> select min(co2_consumed) from game);
+
+![screenshot](Ex6-Assignment4.png)
+
+### Assignment 5
+select country.name, count(*)
+    -> from country
+    -> inner join airport on airport.iso_country = country.iso_country
+    -> group by country.name
+    -> order by count(*) desc
+    -> limit 50;
+
+![screenshot](Ex6-Assignment5.png)
+
+### Assignment 6
+select country.name
+    -> from country
+    -> inner join airport on airport.iso_country = country.iso_country
+    -> group by country.name
+    -> having count(*) > 1000;
+
+![screenshot](Ex6-Assignment6.png)
+
+### Assignment 7
+select name
+    -> from airport
+    -> where elevation_ft in (
+    -> select max(elevation_ft) from airport);
+
+![screenshot](Ex6-Assignment7.png)
+
+### Assignment 8
+select name
+    -> from country
+    -> where country.iso_country in (
+    -> select airport.iso_country from airport
+    -> where elevation_ft in (
+    -> select max(elevation_ft) from airport));
+
+![screenshot](Ex6-Assignment8.png)
+
+### Assignment 9
+select count(*)
+    -> from game
+    -> inner join goal_reached on goal_reached.game_id = game.id
+    -> where screen_name = "Vesa"
+    -> group by screen_name;
+
+![screenshot](Ex6-Assignment9.png)
+
+### Assignment 10
+select name 
+    -> from airport
+    -> where latitude_deg in(
+    -> select min(latitude_deg) from airport);
+
+![screenshot](Ex6-Assignment10.png)
