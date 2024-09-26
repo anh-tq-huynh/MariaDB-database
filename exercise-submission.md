@@ -44,6 +44,7 @@ select co2_budget from game limit 1;
 
 ### Assignment 10
 select co2_budget from game limit 1;
+
 ![screenshot](Ex2-Assignment10(1).png)
 ![screenshot](Ex2-Assignment10(2).png)
 
