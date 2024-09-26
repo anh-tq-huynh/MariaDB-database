@@ -1,5 +1,52 @@
 # Week 3
 
+## Exercise 2
+
+### Assignment 1
+select * from goal;
+![screenshot](Ex2-Assignment1.png)
+
+### Assignment 2
+select name, type from airport where iso_country = "FI"; 
+
+![screenshot](Ex2-Assignment2.png)
+
+### Assignment 3
+select name from airport where iso_country = "FI" order by name;
+
+![screenshot](Ex2-Assignment3.png)
+
+### Assignment 4
+select name, type from airport where iso_country = "FI" order by type,name;
+
+![screenshot](Ex2-Assignment4.png)
+
+### Assignment 5
+select name from country where name like "F%";
+
+![screenshot](Ex2-Assignment5.png)
+
+### Assignment 6
+select name from country where name like "%F%";
+![screenshot](Ex2-Assignment6.png)
+
+### Assignment 7
+select location from game where screen_name = "Vesa";
+![screenshot](Ex2-Assignment7.png)
+
+### Assignment 8
+select co2_consumed from game where screen_name = "Ilkka";
+![screenshot](Ex2-Assignment8.png)
+
+### Assignment 9
+select co2_budget from game limit 1;
+![screenshot](Ex2-Assignment9.png)
+
+### Assignment 10
+select co2_budget from game limit 1;
+![screenshot](Ex2-Assignment10(1).png)
+![screenshot](Ex2-Assignment10(2).png)
+
 ## Exercise 3
 
 ### Assignment 1
@@ -271,3 +318,28 @@ select name
     -> select min(latitude_deg) from airport);
 
 ![screenshot](Ex6-Assignment10.png)
+
+
+## Exercise 7
+
+### Assignment 1
+update game
+    -> set location = (select ident from airport where airport.name = "Nottingham Airport"),
+    -> co2_consumed = co2_consumed + 500
+    -> where screen_name = "Vesa";
+    
+select * from game;
+
+![screenshot](Ex7-Assignment1.png)
+
+### Assignment 3
+delete from goal_reached;
+select * from goal_reached;
+
+![screenshot](Ex7-Assignment3.png)
+
+### Assignment 4
+delete from game;
+select * from game;
+
+![screenshot](Ex7-Assignment4.png)
